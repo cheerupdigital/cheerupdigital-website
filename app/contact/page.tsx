@@ -70,10 +70,10 @@ export default function ContactPage() {
               <div className="mt-10 rounded-2xl border border-line bg-white/[0.02] p-6">
                 <p className="text-sm text-muted">Prefer email?</p>
                 <a
-                  href="mailto:hello@cheerup.digital"
+                  href="mailto:info@cheerupdigital.com"
                   className="mt-1 inline-flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-gold"
                 >
-                  <Mail className="h-4 w-4" /> hello@cheerup.digital
+                  <Mail className="h-4 w-4" /> info@cheerupdigital.com
                 </a>
               </div>
             </Reveal>

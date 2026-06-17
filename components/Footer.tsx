@@ -74,16 +74,16 @@ export default function Footer() {
             <ul className="space-y-3 text-muted">
               <li>
                 <a
-                  href="mailto:hello@cheerup.digital"
+                  href="mailto:info@cheerupdigital.com"
                   className="inline-flex items-center gap-2 transition-colors hover:text-ink"
                 >
                   <Mail className="h-4 w-4 text-gold" />
-                  hello@cheerup.digital
+                  info@cheerupdigital.com
                 </a>
               </li>
               <li className="inline-flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-gold" />
-                Mumbai · Bengaluru · Remote
+                Saket, New Delhi
               </li>
               {["Instagram", "LinkedIn", "YouTube"].map((s) => (
                 <li key={s}>

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(npx next *)",
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "PowerShell(\"---NODE---\")",
+      "PowerShell(\"---NPM---\")",
+      "PowerShell(\\(Get-Content package.json -Raw | ConvertFrom-Json\\).dependencies | Format-List)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

@@ -28,7 +28,7 @@ export default function Framework() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="absolute left-0 right-0 top-7 hidden h-px origin-left bg-gradient-to-r from-transparent via-gold/50 to-transparent lg:block"
+            className="absolute left-0 right-0 top-7 hidden h-px origin-left bg-gradient-to-r from-transparent via-brand-soft/60 to-transparent lg:block"
           />
 
           <div className="grid gap-8 lg:grid-cols-3">

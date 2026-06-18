@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, TrendingUp, Stethoscope } from "lucide-react";
+import { Sparkles, TrendingUp, Stethoscope, Activity } from "lucide-react";
 import Button from "../ui/Button";
 import Aurora from "../ui/Aurora";
 import KineticText from "../KineticText";
@@ -96,12 +96,12 @@ export default function Hero() {
           <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-line" />
           <div className="absolute left-1/2 top-1/2 h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-line/60" />
           <div className="absolute left-1/2 top-1/2 h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 animate-spin-slow">
-            <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-gold shadow-[0_0_18px_4px_rgba(212,175,55,0.6)]" />
+            <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-gold shadow-[0_0_18px_4px_rgba(226,193,96,0.6)]" />
           </div>
 
           {/* Core */}
           <div className="absolute left-1/2 top-1/2 grid h-32 w-32 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-gold-gradient shadow-gold animate-float">
-            <span className="font-display text-3xl font-bold text-night">C</span>
+            <Activity className="h-12 w-12 text-night" strokeWidth={2.5} />
             <span className="absolute inset-0 rounded-full ring-1 ring-white/30" />
           </div>
 

@@ -48,7 +48,7 @@ function DashboardVisual({ accent }: { accent: string }) {
             style={{
               background:
                 i === bars.length - 1
-                  ? "linear-gradient(180deg,#E6C868,#9E7E26)"
+                  ? "linear-gradient(180deg,#ECD493,#B8973A)"
                   : "rgba(255,255,255,0.08)",
               boxShadow:
                 i === bars.length - 1 ? `0 0 18px ${accent}66` : undefined,

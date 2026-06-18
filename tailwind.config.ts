@@ -12,9 +12,12 @@ const config: Config = {
         night: "#0B0F19",
         surface: "#111827",
         "surface-2": "#0F1525",
-        gold: "#D4AF37",
-        "gold-soft": "#E6C868",
-        "gold-deep": "#9E7E26",
+        gold: "#E2C160",
+        "gold-soft": "#ECD493",
+        "gold-deep": "#B8973A",
+        brand: "#0024D9",
+        "brand-light": "#2C49F0",
+        "brand-soft": "#5B73FF",
         ink: "#FFFFFF",
         muted: "#A1A1AA",
         line: "rgba(255,255,255,0.08)",
@@ -35,14 +38,18 @@ const config: Config = {
         "4xl": "2rem",
       },
       boxShadow: {
-        gold: "0 0 0 1px rgba(212,175,55,0.25), 0 20px 60px -20px rgba(212,175,55,0.35)",
+        gold: "0 0 0 1px rgba(226,193,96,0.25), 0 20px 60px -20px rgba(226,193,96,0.35)",
         card: "0 30px 80px -40px rgba(0,0,0,0.8)",
       },
       backgroundImage: {
         "gold-gradient":
-          "linear-gradient(135deg, #E6C868 0%, #D4AF37 45%, #9E7E26 100%)",
+          "linear-gradient(135deg, #ECD493 0%, #E2C160 45%, #B8973A 100%)",
+        "brand-gradient":
+          "linear-gradient(135deg, #2C49F0 0%, #0024D9 100%)",
+        "radial-brand":
+          "radial-gradient(circle at 50% 0%, rgba(0,36,217,0.18), transparent 60%)",
         "radial-faint":
-          "radial-gradient(circle at 50% 0%, rgba(212,175,55,0.12), transparent 60%)",
+          "radial-gradient(circle at 50% 0%, rgba(226,193,96,0.12), transparent 60%)",
         grid: "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
       },
       animation: {

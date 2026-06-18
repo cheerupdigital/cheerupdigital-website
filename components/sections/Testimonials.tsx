@@ -7,8 +7,9 @@ import { testimonials } from "@/lib/data";
 
 export default function Testimonials() {
   return (
-    <section className="relative py-24 md:py-32">
-      <div className="container-x">
+    <section className="relative overflow-hidden border-y border-line bg-surface/40 py-24 md:py-32">
+      <div className="pointer-events-none absolute inset-0 bg-grid opacity-30" aria-hidden />
+      <div className="container-x relative">
         <SectionHeading
           align="center"
           eyebrow="What partners say"

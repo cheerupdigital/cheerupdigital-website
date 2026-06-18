@@ -154,7 +154,7 @@ export const caseStudies = [
       { value: 3.8, suffix: "x", label: "Return on ad spend", decimals: 1 },
       { value: 61, suffix: "%", label: "Lower cost per lead" },
     ],
-    accent: "#D4AF37",
+    accent: "#E2C160",
   },
   {
     slug: "revive-hair",
@@ -177,7 +177,7 @@ export const caseStudies = [
       { value: 2.4, suffix: "x", label: "Consultation-to-treatment", decimals: 1 },
       { value: 58, suffix: "%", label: "Lower cost per lead" },
     ],
-    accent: "#E6C868",
+    accent: "#2C49F0",
   },
   {
     slug: "serene-aesthetics",
@@ -200,7 +200,7 @@ export const caseStudies = [
       { value: 287, suffix: "%", label: "Organic traffic" },
       { value: 100, suffix: "%", label: "Launch sell-out" },
     ],
-    accent: "#D4AF37",
+    accent: "#E2C160",
   },
 ];
 

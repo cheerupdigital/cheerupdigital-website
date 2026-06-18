@@ -38,7 +38,7 @@ export default function Navbar() {
           <Magnetic strength={0.2}>
             <Link href="/" data-cursor className="flex items-center" aria-label="Cheerup Digital — home">
               <Image
-                src="/cheerup-logo-v2.png"
+                src="/cheerup-logo-v3.png"
                 alt="Cheerup Digital"
                 width={1740}
                 height={431}

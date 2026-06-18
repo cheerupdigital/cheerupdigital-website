@@ -38,7 +38,7 @@ export default function Aurora({
         style={{
           opacity,
           background:
-            "radial-gradient(circle at 50% 40%, rgba(212,175,55,0.5), transparent 65%)",
+            "radial-gradient(circle at 50% 40%, rgba(226,193,96,0.5), transparent 65%)",
         }}
       />
       <div
@@ -47,7 +47,7 @@ export default function Aurora({
           opacity: opacity * 0.7,
           animationDelay: "-7s",
           background:
-            "radial-gradient(circle at 50% 50%, rgba(61,116,255,0.32), transparent 70%)",
+            "radial-gradient(circle at 50% 50%, rgba(0,36,217,0.42), transparent 70%)",
         }}
       />
       <div
@@ -56,7 +56,7 @@ export default function Aurora({
           opacity: opacity * 0.6,
           animationDelay: "-13s",
           background:
-            "radial-gradient(circle at 50% 50%, rgba(212,175,55,0.28), transparent 70%)",
+            "radial-gradient(circle at 50% 50%, rgba(226,193,96,0.28), transparent 70%)",
         }}
       />
     </motion.div>

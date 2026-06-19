@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
 import Marquee from "./Marquee";
 import Button from "./ui/Button";
@@ -33,6 +34,15 @@ export default function Footer() {
       <div className="container-x relative py-20">
         <div className="grid gap-14 lg:grid-cols-[1.5fr_1fr_1fr]">
           <div>
+            <Link href="/" aria-label="Cheerup Digital — home" className="inline-block">
+              <Image
+                src="/cheerup-logo-v4.png"
+                alt="Cheerup Digital"
+                width={1740}
+                height={431}
+                className="mb-8 h-12 w-auto"
+              />
+            </Link>
             <h3 className="font-display text-4xl font-semibold tracking-tight md:text-5xl">
               Ready to grow your{" "}
               <span className="text-gradient-gold">clinic?</span>

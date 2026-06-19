@@ -289,42 +289,184 @@ export const team = [
 
 export const blogCategories = [
   "All",
+  "Delhi Market",
   "Patient Acquisition",
-  "Authority",
   "Automation",
   "AI",
 ];
 
-export const blogPosts = [
+export type BlogBlock =
+  | { type: "p"; text: string }
+  | { type: "h2"; text: string }
+  | { type: "list"; items: string[] }
+  | { type: "quote"; text: string };
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  author: string;
+  date: string;
+  readTime: string;
+  image: string;
+  featured: boolean;
+  content: BlogBlock[];
+};
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "delhi-aesthetic-clinics-revenue-struggle",
+    title: "Why Delhi's Aesthetic Clinics Are Booming — Yet Struggling to Grow Revenue",
+    excerpt:
+      "Delhi runs 150,000+ aesthetic procedures a year and commands India's highest treatment ticket. So why do so many clinics feel stuck? The revenue paradox, explained.",
+    category: "Delhi Market",
+    author: "Aarav Shah",
+    date: "2026-06-15",
+    readTime: "9 min read",
+    image: "/blog/delhi-revenue.svg",
+    featured: true,
+    content: [
+      { type: "p", text: "Walk through Greater Kailash, Saket or Khan Market and you'll pass a new skin, hair or aesthetic clinic every few hundred metres. Business looks like it's booming — and on paper, it is. Yet behind the polished reception desks, a surprising number of Delhi clinic owners will quietly tell you the same thing: revenue isn't growing the way the demand suggests it should." },
+      { type: "h2", text: "A market that's genuinely exploding" },
+      { type: "p", text: "The numbers are not the problem. India's medical aesthetics market was valued at roughly USD 650 million to USD 1.8 billion in 2024–25 depending on the report, and is forecast to grow at a CAGR of 8–10% for the rest of the decade. Delhi NCR sits right at the centre of that growth." },
+      { type: "list", items: [
+        "Clinics in Delhi reported over 150,000 aesthetic procedures in 2023, with around 40% involving energy-based devices like lasers.",
+        "The average skin-rejuvenation ticket in Delhi NCR is about ₹44,000 — roughly 20% higher than other Indian metros.",
+        "Delhi NCR, Mumbai, Bengaluru, Hyderabad, Chennai and Pune together drive 65–70% of national revenue.",
+        "The number of aesthetic clinics in India grew from ~2,800 in 2018 to nearly 4,500 in 2023.",
+      ]},
+      { type: "p", text: "Demand is rising, ticket sizes are high, and patients are more willing than ever to pay for skin, hair and aesthetic treatments. So where does the growth actually leak away?" },
+      { type: "h2", text: "The paradox: more demand, more clinics, capped growth" },
+      { type: "p", text: "That same growth has pulled in competition. Delhi NCR is now one of the most saturated aesthetic markets in the country, and the cost of winning a patient has climbed sharply." },
+      { type: "list", items: [
+        "Cost per booked consultation for injectable services has risen to roughly $180–$320 in major metros, up from $120–$210 just three years ago.",
+        "Instagram's organic reach has collapsed compared to a few years ago — the same content reaches a fraction of the audience.",
+        "Google Ads competition between clinics has pushed click costs up across high-intent treatment keywords.",
+        "The old walk-in-and-referral model simply doesn't scale past a certain point.",
+      ]},
+      { type: "p", text: "The result is a clinic that's busier than ever but watching margins thin out — spending more to attract each patient while the front desk struggles to convert and retain them." },
+      { type: "h2", text: "It's not a marketing problem. It's a growth-systems problem." },
+      { type: "p", text: "Most Delhi clinics we meet don't lack demand or even leads. What they lack is a system that reliably turns attention into booked consultations, consultations into treatments, and one treatment into a lifetime of return visits. Demand is the easy part in 2026. Capturing it predictably is the hard part." },
+      { type: "quote", text: "Most clinics don't have a marketing problem. They have a growth problem." },
+      { type: "p", text: "That's the gap Cheerup Digital exists to close — a measurable Attract → Convert → Scale system built specifically for skin, hair and aesthetic clinics, so growth stops being a gamble and starts being a process. In the next two articles we'll break down exactly where the leaks happen and how to fix them." },
+    ],
+  },
+  {
+    slug: "delhi-clinic-leaky-funnel-speed-to-lead",
+    title: "The Leaky Funnel: How Delhi Clinics Lose Patients After the Click",
+    excerpt:
+      "Most Delhi clinics don't have a lead problem — they have a follow-up problem. Speed-to-lead, no-shows, and the automation that quietly recovers lost revenue.",
+    category: "Delhi Market",
+    author: "Meera Iyer",
+    date: "2026-06-11",
+    readTime: "8 min read",
+    image: "/blog/delhi-funnel.svg",
+    featured: false,
+    content: [
+      { type: "p", text: "Ask a Delhi clinic owner where they lose money and most will point at ad spend. But when we audit the funnel, the biggest leak is almost never at the top. It's everything that happens after a patient raises their hand." },
+      { type: "h2", text: "The real leak isn't leads — it's follow-up" },
+      { type: "p", text: "Speed-to-lead is the single biggest factor in whether an enquiry becomes a booking. The data is brutal: responding within 5 minutes can lift conversion by up to 100x compared with a 30-minute delay, and 78% of patients book with the first clinic that responds." },
+      { type: "p", text: "Yet most clinics reply in hours, not minutes — a front desk juggling walk-ins, calls and Instagram DMs simply can't respond instantly. By the time they call back, the patient has already booked with the clinic down the road." },
+      { type: "list", items: [
+        "Most aesthetic leads need 5–8 touchpoints before they book — a single follow-up call isn't enough.",
+        "Enquiries arrive across WhatsApp, Instagram, Google and the website, but rarely land in one place.",
+        "Without tracking, no one knows which leads were followed up and which quietly went cold.",
+      ]},
+      { type: "h2", text: "No-shows and the retention gap" },
+      { type: "p", text: "The leak continues even after booking. Industry retention rates average just ~50%, and no-shows silently erode a packed calendar. That matters more than most owners realise:" },
+      { type: "list", items: [
+        "A 5% increase in retention can lift profits by 25–95%.",
+        "30–40% of aesthetic clinic revenue comes from follow-up visits, not first bookings.",
+        "Automated SMS and WhatsApp reminders measurably cut no-shows.",
+      ]},
+      { type: "h2", text: "The fix: a system that responds the moment a patient does" },
+      { type: "p", text: "This is exactly what Growth Automation solves. The goal is simple — no enquiry waits, no lead is forgotten, and every patient is gently nurtured until they book and return." },
+      { type: "list", items: [
+        "Instant WhatsApp auto-response the second an enquiry arrives, day or night.",
+        "A single CRM pipeline so every lead — from every channel — is tracked to outcome.",
+        "Automated multi-touch nurture sequences that deliver those 5–8 touchpoints for you.",
+        "AI lead qualification so your team spends its time only on patients ready to book.",
+      ]},
+      { type: "quote", text: "Speed-to-lead decides who books. In a market as competitive as Delhi, minutes are the margin." },
+      { type: "p", text: "Plug the funnel before you pour more money into the top of it. For most Delhi clinics, fixing follow-up and retention recovers more revenue than any increase in ad budget ever could." },
+    ],
+  },
+  {
+    slug: "delhi-aesthetic-growth-system-2026",
+    title: "Building a Predictable Growth System for Your Delhi Clinic in 2026",
+    excerpt:
+      "A practical, data-backed playbook for Delhi skin, hair and aesthetic clinics: attract high-intent patients, convert with zero-leak follow-up, and scale with AI.",
+    category: "Delhi Market",
+    author: "Diya Nair",
+    date: "2026-06-08",
+    readTime: "10 min read",
+    image: "/blog/delhi-growth.svg",
+    featured: false,
+    content: [
+      { type: "p", text: "We've covered why Delhi clinics struggle to grow revenue despite booming demand, and where the funnel leaks. This is the playbook — the system we deploy to turn an unpredictable calendar into a reliable, compounding pipeline. It runs on three stages: Attract, Convert, Scale." },
+      { type: "h2", text: "1. Attract — get in front of high-intent patients" },
+      { type: "p", text: "In a high-ticket market like Delhi NCR, the goal isn't more clicks — it's the right clicks. We build acquisition around treatment intent, so spend goes toward patients actively searching for what you offer." },
+      { type: "list", items: [
+        "Google Ads targeting high-intent treatment and condition searches.",
+        "Meta campaigns built around clear offers, not generic brand posts.",
+        "SEO and treatment-page content to own organic demand over time.",
+        "Conversion-first landing pages for each core treatment.",
+      ]},
+      { type: "h2", text: "2. Convert — let nothing leak" },
+      { type: "p", text: "Attraction is wasted without conversion. This stage is where most Delhi clinics recover the most revenue, because it fixes the follow-up gap that silently kills bookings." },
+      { type: "list", items: [
+        "Instant WhatsApp response and a single CRM pipeline for every channel.",
+        "Automated nurture delivering the 5–8 touchpoints leads need before booking.",
+        "Reminder flows to cut no-shows and protect a full calendar.",
+        "AI lead scoring so the team focuses on patients ready to book.",
+      ]},
+      { type: "h2", text: "3. Scale — compound what works" },
+      { type: "p", text: "Once acquisition and conversion are predictable, scale comes from authority and retention — the highest-margin growth a clinic can have." },
+      { type: "list", items: [
+        "Doctor personal branding so patients arrive already trusting your clinicians.",
+        "Video and YouTube content that pre-sells consultations.",
+        "Retention and recall programmes — remember, 30–40% of revenue is follow-up.",
+        "AI reporting that ties every rupee of spend to consultations and treatments.",
+      ]},
+      { type: "h2", text: "The numbers to actually track" },
+      { type: "p", text: "A growth system is only as good as its scoreboard. These are the metrics we put on a live dashboard for every Delhi clinic we partner with:" },
+      { type: "list", items: [
+        "Cost per booked consultation (not cost per click).",
+        "Speed-to-lead — median response time to a new enquiry.",
+        "Consultation-to-treatment conversion rate.",
+        "Patient retention and repeat-visit revenue.",
+        "Return on ad spend, tracked to treatments booked.",
+      ]},
+      { type: "quote", text: "Demand is the easy part in Delhi. A system that captures it predictably is the unfair advantage." },
+      { type: "p", text: "This is precisely the system Cheerup Digital builds and runs for skin, hair and aesthetic clinics. If your clinic is busy but your growth feels capped, the opportunity isn't a bigger budget — it's a better system. Let's map yours." },
+    ],
+  },
   {
     slug: "predictable-patient-acquisition",
     title: "How to build a predictable patient acquisition system",
     excerpt:
       "Most clinics buy leads. The ones that win build systems. Here's the exact framework we use to turn ad spend into booked consultations.",
     category: "Patient Acquisition",
+    author: "Aarav Shah",
     date: "2026-05-28",
     readTime: "8 min read",
-    featured: true,
-  },
-  {
-    slug: "doctor-authority-2026",
-    title: "The doctor authority playbook for 2026",
-    excerpt:
-      "Patients choose clinicians they trust before they ever book. Here's how to make your doctors the obvious choice online.",
-    category: "Authority",
-    date: "2026-05-14",
-    readTime: "6 min read",
+    image: "/blog/acquisition.svg",
     featured: false,
-  },
-  {
-    slug: "whatsapp-automation-clinics",
-    title: "WhatsApp automation that recovers lost clinic leads",
-    excerpt:
-      "Speed-to-lead decides who books. We break down the automation stack that responds in seconds, not hours.",
-    category: "Automation",
-    date: "2026-04-30",
-    readTime: "5 min read",
-    featured: false,
+    content: [
+      { type: "p", text: "There's a meaningful difference between buying leads and building a patient acquisition system. Leads run out the moment you pause spend. A system compounds — every campaign, page and follow-up makes the next patient cheaper to win." },
+      { type: "h2", text: "Start with treatment economics, not clicks" },
+      { type: "p", text: "Every campaign should optimise to booked consultations and lifetime value, never impressions or vanity clicks. When you know what a treatment is truly worth, you know exactly what you can afford to spend to win it." },
+      { type: "h2", text: "The four pillars of a durable system" },
+      { type: "list", items: [
+        "Intent-led traffic from Google and Meta.",
+        "Conversion-first landing pages for each treatment.",
+        "Instant follow-up via WhatsApp and CRM.",
+        "Live reporting that ties spend to revenue.",
+      ]},
+      { type: "quote", text: "A predictable pipeline is built, not bought." },
+      { type: "p", text: "Get these four working together and patient acquisition stops being a monthly gamble and becomes a measurable, scalable process." },
+    ],
   },
   {
     slug: "ai-lead-qualification",
@@ -332,28 +474,46 @@ export const blogPosts = [
     excerpt:
       "Not every enquiry deserves the same effort. How AI scoring focuses your team on patients ready to book.",
     category: "AI",
+    author: "Meera Iyer",
     date: "2026-04-16",
     readTime: "7 min read",
+    image: "/blog/ai-leads.svg",
     featured: false,
-  },
-  {
-    slug: "landing-pages-that-convert",
-    title: "Anatomy of a clinic landing page that converts at 14%",
-    excerpt:
-      "We've shipped hundreds of treatment landing pages. These are the conversion principles that consistently win.",
-    category: "Patient Acquisition",
-    date: "2026-03-29",
-    readTime: "9 min read",
-    featured: false,
+    content: [
+      { type: "p", text: "High-ticket treatments attract a wide range of enquiries — from ready-to-book patients to casual browsers. Treating them all the same wastes your team's most valuable resource: time." },
+      { type: "h2", text: "What AI scoring actually does" },
+      { type: "p", text: "AI lead qualification reads intent signals — the treatment asked about, urgency, budget cues, responsiveness — and scores each enquiry so your team engages the hottest leads first, within minutes." },
+      { type: "list", items: [
+        "Route high-intent leads to a human instantly.",
+        "Nurture lower-intent leads automatically until they're ready.",
+        "Surface why a lead converted — or didn't.",
+      ]},
+      { type: "quote", text: "Spend your team's time on patients ready to book, not on sorting the inbox." },
+      { type: "p", text: "The result is higher conversion without adding headcount — the team simply stops wasting effort on enquiries that were never going to book." },
+    ],
   },
   {
     slug: "retention-flywheel",
     title: "The patient retention flywheel most clinics ignore",
     excerpt:
       "Acquisition is expensive. Retention compounds. Here's how to build a loyalty loop that scales revenue quietly.",
-    category: "Authority",
+    category: "Patient Acquisition",
+    author: "Diya Nair",
     date: "2026-03-12",
     readTime: "6 min read",
+    image: "/blog/retention.svg",
     featured: false,
+    content: [
+      { type: "p", text: "Acquisition gets all the attention, but retention is where margins live. With 30–40% of aesthetic revenue coming from follow-up visits, the patients you already have are your most profitable growth channel." },
+      { type: "h2", text: "Why retention beats acquisition" },
+      { type: "p", text: "A 5% lift in retention can raise profits by 25–95%, yet industry retention averages only around 50%. The clinics that win treat the post-treatment journey as deliberately as the first booking." },
+      { type: "list", items: [
+        "Automated recall and reminder flows for repeat treatments.",
+        "Personalised aftercare that builds trust and results.",
+        "Loyalty and membership models that reward return visits.",
+      ]},
+      { type: "quote", text: "Acquisition fills the clinic once. Retention fills it for years." },
+      { type: "p", text: "Build the flywheel and every new patient becomes worth far more than their first appointment." },
+    ],
   },
 ];

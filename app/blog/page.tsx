@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/ui/Reveal";
@@ -9,10 +10,18 @@ import { blogPosts } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Growth playbooks for clinics — patient acquisition, doctor authority, automation and AI. Practical insights from the Cheerup Digital team.",
+    "Growth playbooks for skin, hair and aesthetic clinics — patient acquisition, automation and AI, plus a data-backed series on the Delhi aesthetic market.",
 };
 
 const featured = blogPosts.find((p) => p.featured) ?? blogPosts[0];
+
+function formatDate(iso: string) {
+  return new Date(iso).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
 
 export default function BlogPage() {
   return (
@@ -28,10 +37,19 @@ export default function BlogPage() {
       <section className="pb-6">
         <div className="container-x">
           <Reveal>
-            <article className="card card-hover group grid overflow-hidden lg:grid-cols-2">
-              <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-gradient-to-br from-surface to-base lg:aspect-auto">
-                <div className="absolute inset-0 bg-radial-faint" />
-                <span className="relative font-display text-5xl font-bold text-gold/20">
+            <Link
+              href={`/blog/${featured.slug}`}
+              data-cursor
+              className="card card-hover group grid overflow-hidden lg:grid-cols-2"
+            >
+              <div className="relative min-h-[260px] overflow-hidden border-b border-line lg:border-b-0 lg:border-r">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={featured.image}
+                  alt={featured.title}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <span className="absolute left-5 top-5 rounded-full border border-gold/30 bg-base/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur">
                   Featured
                 </span>
               </div>
@@ -48,12 +66,17 @@ export default function BlogPage() {
                 <p className="mt-4 text-[15px] leading-relaxed text-muted">
                   {featured.excerpt}
                 </p>
-                <span className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-gold">
-                  Read the article
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </span>
+                <div className="mt-7 flex items-center justify-between">
+                  <span className="text-sm text-muted">
+                    {formatDate(featured.date)}
+                  </span>
+                  <span className="inline-flex items-center gap-2 text-sm font-medium text-gold">
+                    Read article
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
+                </div>
               </div>
-            </article>
+            </Link>
           </Reveal>
         </div>
       </section>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import Marquee from "./Marquee";
 import Button from "./ui/Button";
 import { nav } from "@/lib/data";
@@ -89,6 +89,15 @@ export default function Footer() {
                 >
                   <Mail className="h-4 w-4 text-gold" />
                   info@cheerupdigital.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+918015566509"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-ink"
+                >
+                  <Phone className="h-4 w-4 text-gold" />
+                  +91 80155 66509
                 </a>
               </li>
               <li className="inline-flex items-center gap-2">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, MessageSquare, CalendarClock, ShieldCheck } from "lucide-react";
+import { Mail, Phone, MessageSquare, CalendarClock, ShieldCheck } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/ui/Reveal";
@@ -67,14 +67,25 @@ export default function ContactPage() {
             </div>
 
             <Reveal delay={0.3}>
-              <div className="mt-10 rounded-2xl border border-line bg-white/[0.02] p-6">
-                <p className="text-sm text-muted">Prefer email?</p>
-                <a
-                  href="mailto:info@cheerupdigital.com"
-                  className="mt-1 inline-flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-gold"
-                >
-                  <Mail className="h-4 w-4" /> info@cheerupdigital.com
-                </a>
+              <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-line bg-white/[0.02] p-6">
+                  <p className="text-sm text-muted">Prefer email?</p>
+                  <a
+                    href="mailto:info@cheerupdigital.com"
+                    className="mt-1 inline-flex items-center gap-2 font-display text-base font-semibold tracking-tight text-gold"
+                  >
+                    <Mail className="h-4 w-4" /> info@cheerupdigital.com
+                  </a>
+                </div>
+                <div className="rounded-2xl border border-line bg-white/[0.02] p-6">
+                  <p className="text-sm text-muted">Prefer to call?</p>
+                  <a
+                    href="tel:+918015566509"
+                    className="mt-1 inline-flex items-center gap-2 font-display text-base font-semibold tracking-tight text-gold"
+                  >
+                    <Phone className="h-4 w-4" /> +91 80155 66509
+                  </a>
+                </div>
               </div>
             </Reveal>
           </div>

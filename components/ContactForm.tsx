@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Loader2 } from "lucide-react";
 
 type Fields = {
   name: string;
@@ -115,21 +115,42 @@ export default function ContactForm() {
   const [values, setValues] = useState<Fields>(initial);
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [serverError, setServerError] = useState("");
 
   const onChange = (name: keyof Fields, v: string) => {
     setValues((prev) => ({ ...prev, [name]: v }));
     setErrors((prev) => (prev[name] ? { ...prev, [name]: undefined } : prev));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setServerError("");
     const found = validate(values);
     if (Object.keys(found).length) {
       setErrors(found);
       return;
     }
-    // In production this would POST to an API route / CRM.
-    setSent(true);
+
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+      setSent(true);
+    } catch (err) {
+      setServerError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -207,11 +228,24 @@ export default function ContactForm() {
             <button
               type="submit"
               data-cursor
-              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gold-gradient px-7 py-4 text-sm font-semibold text-night shadow-gold transition-all duration-300 hover:brightness-110 md:w-auto"
+              disabled={submitting}
+              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gold-gradient px-7 py-4 text-sm font-semibold text-night shadow-gold transition-all duration-300 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto"
             >
-              Request my consultation
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              {submitting ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Sending…
+                </>
+              ) : (
+                <>
+                  Request my consultation
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </>
+              )}
             </button>
+            {serverError && (
+              <p className="text-sm text-red-400">{serverError}</p>
+            )}
             <p className="text-xs text-muted">
               We respond within one business day. Your details stay private.
             </p>

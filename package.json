@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "start:hostinger": "node server.js",
     "lint": "next lint"
+  },
+  "engines": {
+    "node": ">=18.18.0"
   },
   "dependencies": {
     "framer-motion": "^11.3.8",
@@ -14,7 +18,8 @@
     "lucide-react": "^0.460.0",
     "next": "^14.2.35",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "resend": "^6.14.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.11",

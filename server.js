@@ -18,8 +18,15 @@ const port = parseInt(process.env.PORT || "3000", 10);
 const app = next({ dev: false });
 const handle = app.getRequestHandler();
 
-app.prepare().then(() => {
-  createServer((req, res) => handle(req, res)).listen(port, () => {
-    console.log(`> Cheerup Digital ready on port ${port}`);
+app
+  .prepare()
+  .then(() => {
+    createServer((req, res) => handle(req, res)).listen(port, () => {
+      console.log(`> Cheerup Digital ready on port ${port}`);
+    });
+  })
+  .catch((err) => {
+    // Surfaces the real reason in console.log / stderr.log instead of a blank 503.
+    console.error("FAILED TO START Next.js server:", err);
+    process.exit(1);
   });
-});

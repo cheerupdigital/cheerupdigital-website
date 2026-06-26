@@ -5,6 +5,15 @@
 const { createServer } = require("http");
 const next = require("next");
 
+// Load .env / .env.production / .env.local from the app root, so secrets like
+// RESEND_API_KEY work even when the host's env-var UI doesn't inject them into
+// the process. Create a `.env.local` file in this folder with your key.
+try {
+  require("@next/env").loadEnvConfig(process.cwd(), false);
+} catch (e) {
+  console.warn("Could not load env files:", e && e.message);
+}
+
 const port = parseInt(process.env.PORT || "3000", 10);
 const app = next({ dev: false });
 const handle = app.getRequestHandler();

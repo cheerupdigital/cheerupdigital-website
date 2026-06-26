@@ -30,6 +30,20 @@ function esc(s = "") {
     .replace(/>/g, "&gt;");
 }
 
+// Diagnostic: open /api/contact in a browser. Never reveals the key itself —
+// only whether the server can see it, and its length (to catch typos/quotes).
+export async function GET() {
+  const key = process.env.RESEND_API_KEY || "";
+  return NextResponse.json({
+    configured: key.length > 0,
+    keyLength: key.length,
+    keyLooksValid: key.startsWith("re_"),
+    toEmail: process.env.CONTACT_TO_EMAIL || "info@cheerupdigital.com (default)",
+    fromEmail: process.env.CONTACT_FROM_EMAIL || "onboarding@resend.dev (default)",
+    node: process.version,
+  });
+}
+
 export async function POST(req: Request) {
   let data: Body;
   try {
